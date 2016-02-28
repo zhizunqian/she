@@ -1,0 +1,56 @@
+body{
+	background: #000;
+	margin: 0;
+	padding: 0
+}
+.box{
+	width: 900px;
+	margin: 0 auto;
+	margin-top: 20px;
+	position: relative;
+	background-image: url(../img/11.jpg);
+	background-size: 900px 600px;
+}
+#score{
+	width: 80px;
+	height: 50px;
+	background: #a7ff51;
+	border: 1px solid #000;
+	position: absolute;
+	left:87%;
+	top: 40%;
+	margin-top: -10px;
+	z-index: 2;
+	line-height: 50px;
+	
+}
+#start{
+	z-index: 2;
+	width: 80px;
+	height: 50px;
+	background: #a7ff51;
+	border: 1px solid#000;
+	position: absolute;
+	left: 87%;
+	top: 60%;
+	text-align: center;
+	margin-top: -30px;
+	line-height: 50px;
+	cursor: default;
+}
+#sence{
+	width: 600px;
+	height: 600px;
+	margin: 0 auto;
+	border: 1px solid #000;
+	background: url(../img/2.jpg);
+}
+.block{
+	width: 29px;
+	height:29px;
+	background-image: url(../img/2.jpg);
+	background-size: 29px 29px;
+	float: left;
+	margin-right:1px;
+	margin-bottom: 1px;
+}
