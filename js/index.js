@@ -32,20 +32,27 @@ $(function(){
 			var ss=$('#score').text("得分:"+score);
 	var food=dropfood();
 
+	$("#0_0").css({backgroundImage: "url(./img/w.png)",backgroundSize: "29px 29px"});
+			$("#0_2").css({backgroundSize:"29px 29px",backgroundImage:"url(./img/5.png)"});
 	var fx=39;
 	var move=function(){
 		var oldtou=she[she.length-1];
+			$("#"+oldtou.x+"_"+oldtou.y).css({backgroundSize:"29px 29px",backgroundImage:"url(./img/4.jpg)"});
 		if(fx==39){
 			var xintou={x:oldtou.x,y:oldtou.y+1};
+			$("#"+xintou.x+"_"+xintou.y).css({backgroundSize:"29px 29px",backgroundImage:"url(./img/5.png)"});
 		}
 		if(fx==38){
 			var xintou={x:oldtou.x-1,y:oldtou.y};
+			$("#"+xintou.x+"_"+xintou.y).css({backgroundSize:"29px 29px",backgroundImage:"url(./img/5s.png)"});
 		}
 		if(fx==40){
 			var xintou={x:oldtou.x+1,y:oldtou.y};
+			$("#"+xintou.x+"_"+xintou.y).css({backgroundSize:"29px 29px",backgroundImage:"url(./img/5x.png)"});
 		}
 		if(fx==37){
 			var xintou={x:oldtou.x,y:oldtou.y-1};
+			$("#"+xintou.x+"_"+xintou.y).css({backgroundSize:"29px 29px",backgroundImage:"url(./img/5z.png)"});
 		}
 		if(xintou.x<0||xintou.y<0||xintou.x>19||xintou.y>19||data[xintou.x+"_"+xintou.y]){
 			alert("亲，别想不开啊！");
@@ -66,13 +73,16 @@ $(function(){
 		}
 		else{
 			var weiba=she.shift();
+
+
+			
 			delete data[weiba.x+"_"+weiba.y];
+			// $("#"+weiba.x+"_"+weiba.y).css({backgroundImage: "url(./img/w.png)",backgroundSize: "29px 29px"});
 			$("#"+weiba.x+"_"+weiba.y).css({backgroundImage: "url(./img/2.jpg)",backgroundSize: "29px 29px"});
 		}
 
 		she.push(xintou);
 		data[xintou.x+"_"+xintou.y]=true;
-		$("#"+xintou.x+"_"+xintou.y).css({backgroundSize:"29px 29px",backgroundImage:"url(./img/4.jpg)"});
 	}
 	var time;
 	$("#start").click(function(){
